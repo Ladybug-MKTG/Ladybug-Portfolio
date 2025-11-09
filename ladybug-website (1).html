@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladybug Media & Marketing | Premium Marketing Agency Dubai UAE</title>
+    <meta name="description" content="Dubai's premium marketing agency specializing in Real Estate & Service Businesses. ROI + Brand Identity. 73+ clients. Properties sell 32% faster.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --grey: #929292;
+            --gold: #FACEA7;
+            --gold-dark: #E6B88A;
+            --gold-vibrant: #FFD700;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(250, 206, 167, 0.15);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 1px;
+            background: var(--gold);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Hero Section - Can have background */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+            /* Add your background image here */
+            /* background-image: url('your-background.jpg'); */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Dark overlay for hero (when using background image) */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+        
+        /* Animated gradient background (when no image) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(250, 206, 167, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 6rem);
+            font-weight: 200;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+        
+        .hero .highlight {
+            display: block;
+            background: linear-gradient(135deg, var(--gold-vibrant), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--grey);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--gold-vibrant), var(--gold));
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+            margin: 10px;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            padding: 18px 50px;
+            background: transparent;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px;
+            border: 1px solid var(--gold);
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        
+        .cta-secondary:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 100px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 200;
+            background: linear-gradient(135deg, var(--gold-vibrant), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: var(--grey);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            display: block;
+        }
+        
+        /* Trusted Clients Logo Section */
+        .clients-section {
+            background: #0a0a0a;
+            padding: 60px 40px;
+            border-top: 1px solid rgba(250, 206, 167, 0.1);
+            border-bottom: 1px solid rgba(250, 206, 167, 0.1);
+        }
+        
+        .clients-label {
+            text-align: center;
+            font-size: 11px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-placeholder {
+            width: 120px;
+            height: 80px;
+            background: rgba(250, 206, 167, 0.05);
+            border: 1px solid rgba(250, 206, 167, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--grey);
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .logo-placeholder:hover {
+            background: rgba(250, 206, 167, 0.1);
+            border-color: var(--gold);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 120px 40px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-label {
+            font-size: 11px;
+            color: var(--gold-vibrant);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 200;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--grey);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1px;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .problem-card {
+            background: var(--black);
+            padding: 50px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: linear-gradient(180deg, var(--gold-vibrant), var(--gold));
+            transition: height 0.3s;
+        }
+        
+        .problem-card:hover::before {
+            height: 100%;
+        }
+        
+        .problem-card:hover {
+            background: #0a0a0a;
+        }
+        
+        .problem-number {
+            font-size: 12px;
+            color: var(--gold-vibrant);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .problem-card p {
+            color: var(--grey);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        /* Philosophy/Why Different Section */
+        .why-different {
+            position: relative;
+            background: #0a0a0a;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 100px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .why-item {
+            text-align: left;
+        }
+        
+        .why-item h3 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            background: linear-gradient(135deg, var(--gold-vibrant), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .why-item p {
+            color: var(--grey);
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: var(--black);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            padding: 40px;
+            border: 1px solid rgba(250, 206, 167, 0.15);
+            transition: all 0.3s;
+            background: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(180deg, transparent, rgba(255, 215, 0, 0.05));
+            transition: height 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--gold-vibrant);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+        }
+        
+        .service-card:hover::after {
+            height: 100%;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 10px;
+            color: var(--grey);
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .service-card p {
+            color: var(--grey);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        /* Industries Section */
+        .industries-section {
+            background: #0a0a0a;
+        }
+        
+        .all-industries-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--gold-vibrant), var(--gold));
+            color: var(--black);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 11px;
+            margin-bottom: 40px;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .industry-card {
+            background: var(--black);
+            padding: 50px 40px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: linear-gradient(90deg, var(--gold-vibrant), var(--gold));
+            transition: height 0.3s;
+        }
+        
+        .industry-card:hover::before {
+            height: 3px;
+        }
+        
+        .industry-card:hover {
+            background: #0a0a0a;
+        }
+        
+        .industry-image {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 10px;
+            color: var(--grey);
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .industry-card h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            background: linear-gradient(135deg, var(--gold-vibrant), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        
+        .industry-card p {
+            color: var(--grey);
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .industry-stat {
+            font-size: 0.85rem;
+            color: var(--white);
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 2px solid var(--gold-vibrant);
+        }
+        
+        /* Pilot Program Section */
+        .pilot-section {
+            background: linear-gradient(135deg, #0a0a0a, var(--black));
+            text-align: center;
+            position: relative;
+        }
+        
+        .pilot-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-vibrant), transparent);
+        }
+        
+        .pilot-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px;
+            border: 2px solid var(--gold);
+            background: rgba(255, 215, 0, 0.02);
+        }
+        
+        .pilot-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .pilot-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 200;
+            margin-bottom: 25px;
+        }
+        
+        .pilot-box p {
+            color: var(--grey);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .pilot-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            text-align: left;
+        }
+        
+        .pilot-feature {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+        
+        .pilot-check {
+            color: var(--gold-vibrant);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .pilot-feature-text {
+            color: var(--grey);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--black);
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-label {
+            font-size: 10px;
+            color: var(--grey);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item a {
+            color: var(--gold-vibrant);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 60px 40px 30px;
+            border-top: 1px solid rgba(250, 206, 167, 0.1);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--gold);
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p,
+        .footer-section li {
+            color: var(--grey);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: var(--grey);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(250, 206, 167, 0.05);
+            text-align: center;
+            color: var(--grey);
+            font-size: 12px;
+            font-weight: 300;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 40px;
+                gap: 30px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            section {
+                padding: 80px 20px;
+            }
+            
+            .nav-container,
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .problems-grid,
+            .services-grid,
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pilot-box {
+                padding: 40px 30px;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">LADYBUG</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#pilot">Pilot Program</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Real Estate & Service Business Specialists</div>
+                <h1>
+                    Marketing That Delivers
+                    <span class="highlight">Results & Identity</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Dubai's only agency that refuses to choose. We deliver measurable ROI while building brands that last. Properties sell 32% faster. Service businesses generate 25-40 qualified leads monthly. 73+ clients trust us.
+                </p>
+                <div>
+                    <a href="#pilot" class="cta-primary">Start Your 30-Day Pilot</a>
+                    <a href="#philosophy" class="cta-secondary">Why We're Different</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">73+</span>
+                        <span class="stat-label">Trusted Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">32%</span>
+                        <span class="stat-label">Faster Property Sales</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">25-40</span>
+                        <span class="stat-label">Monthly Qualified Leads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Clients Logo Section -->
+    <section class="clients-section">
+        <div class="clients-label">Trusted by 73+ Leading Brands</div>
+        <div class="logos-grid">
+            <!-- Replace with actual client logos using <img> tags -->
+            <div class="logo-placeholder">Client Logo 1<br><small>Add logo here</small></div>
+            <div class="logo-placeholder">Client Logo 2<br><small>Add logo here</small></div>
+            <div class="logo-placeholder">Client Logo 3<br><small>Add logo here</small></div>
+            <div class="logo-placeholder">Client Logo 4<br><small>Add logo here</small></div>
+            <div class="logo-placeholder">Client Logo 5<br><small>Add logo here</small></div>
+            <div class="logo-placeholder">Client Logo 6<br><small>Add logo here</small></div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">The Reality</div>
+                <h2 class="section-title">Why Most Marketing Fails</h2>
+                <p class="section-subtitle">
+                    You've been disappointed before. Here's why.
+                </p>
+            </div>
+            
+            <div class="problems-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-number">01</div>
+                    <h3>Quality Crisis</h3>
+                    <p>Your brand deserves better than amateur iPhone photos. Professional photography increases engagement by 200%. Your content should reflect your excellence.</p>
+                </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-number">02</div>
+                    <h3>ROI Mystery</h3>
+                    <p>Impressive reports mean nothing if revenue isn't growing. You can't connect spend to sales. You're flying blind with your marketing budget.</p>
+                </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-number">03</div>
+                    <h3>Generic Content</h3>
+                    <p>Copy-paste strategies. Content identical to competitors. Nobody remembers you. Your brand has no distinctive identity in the market.</p>
+                </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-number">04</div>
+                    <h3>Short-Term Tactics</h3>
+                    <p>Month-to-month thinking with no strategy. Every month feels like starting over. No consistency, no momentum, no lasting brand equity.</p>
+                </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-number">05</div>
+                    <h3>Cultural Disconnect</h3>
+                    <p>Your agency doesn't understand Dubai. They miss cultural nuances. Arabic is an afterthought. Your local customers don't feel understood.</p>
+                </div>
+                
+                <div class="problem-card fade-in">
+                    <div class="problem-number">06</div>
+                    <h3>Value Uncertainty</h3>
+                    <p>Rising costs with unclear returns. No pricing transparency. No guarantees. You're nervous about every marketing investment you make.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy/Why Different Section -->
+    <section class="why-different" id="philosophy">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Philosophy</div>
+                <h2 class="section-title">The Ladybug Difference</h2>
+                <p class="section-subtitle">
+                    We refuse to be another agency. Here's what sets us apart.
+                </p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-item fade-in">
+                    <h3>ROI + Identity</h3>
+                    <p>Most agencies offer one or the other. We deliver both. We track every dirham while building brands customers remember and love. No compromise.</p>
+                </div>
+                
+                <div class="why-item fade-in">
+                    <h3>Premium Quality</h3>
+                    <p>Content that makes people stop scrolling. Professional photography and production that reflects your excellence. Quality that stands out in Dubai's market.</p>
+                </div>
+                
+                <div class="why-item fade-in">
+                    <h3>Long-Term Vision</h3>
+                    <p>We invest in understanding your business deeply. We measure success over quarters and years. We build brands that dominate, not just campaigns that perform.</p>
+                </div>
+                
+                <div class="why-item fade-in">
+                    <h3>Dubai Expertise</h3>
+                    <p>Five years in UAE market. Deep cultural understanding. Bilingual content that resonates. We speak your customers' language, literally and culturally.</p>
+                </div>
+                
+                <div class="why-item fade-in">
+                    <h3>Full Transparency</h3>
+                    <p>Clear reporting on leads, sales, revenue. No vanity metrics. No smoke and mirrors. You always know exactly what you're getting and why it matters.</p>
+                </div>
+                
+                <div class="why-item fade-in">
+                    <h3>Specialized Expertise</h3>
+                    <p>We've mastered Real Estate and Service Business marketing. We understand your challenges, speak your language, and have proven strategies that work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Complete Marketing Solutions</h2>
+                <p class="section-subtitle">
+                    Everything your brand needs under one roof
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Photography</h3>
+                    <p>Professional food, product, lifestyle, real estate, and corporate photography. Images that stop scrolls and drive action.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Video Production</h3>
+                    <p>Reels, TikToks, testimonials, virtual tours. Content that generates 1200% more shares and delivers measurable results.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Social Media</h3>
+                    <p>Full management across Instagram, Facebook, TikTok, LinkedIn. Strategic content, community building, platform expertise.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Copywriting</h3>
+                    <p>Compelling copy for social, blogs, websites, emails. Words that connect with audiences and drive conversions.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Paid Advertising</h3>
+                    <p>Meta, Google, TikTok, LinkedIn ads. Data-driven campaigns optimized for maximum return on every dirham spent.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Influencer Marketing</h3>
+                    <p>Authentic partnerships with ROI tracking. Real engagement that moves the needle for your brand and business.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Website Development</h3>
+                    <p>Fast, beautiful, mobile-optimized websites. Landing pages to full e-commerce built to convert visitors into customers.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Local SEO</h3>
+                    <p>Dominate local search. Optimized Google My Business, review generation, capturing high-intent "near me" searches.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Brand Development</h3>
+                    <p>Logo, guidelines, visual identity, messaging. Complete brand systems that stand out and stick in minds.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Email & SMS</h3>
+                    <p>Highest ROI channel. Automated sequences and campaigns generating $42 for every $1 spent.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Reputation Management</h3>
+                    <p>Monitor, respond, generate reviews. Build 5-star reputation. 93% check reviews before buying.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">Replace with icon</div>
+                    <h3>Loyalty Programs</h3>
+                    <p>Turn one-time buyers into lifetime customers. Increase profits 25-95% through strategic retention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Expertise</div>
+                <h2 class="section-title">Industries We Transform</h2>
+                <div class="all-industries-badge">Serving ALL Industries</div>
+                <p class="section-subtitle">
+                    Specialized expertise in Real Estate & Service Businesses, with proven results across all sectors
+                </p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card fade-in">
+                    <div class="industry-image">Replace with Real Estate image</div>
+                    <h3>Real Estate</h3>
+                    <p>Sell yourself as much as properties. Premium photography and personal branding that attracts listings and closes deals faster.</p>
+                    <div class="industry-stat">Properties sell 32% faster at 5-10% higher prices with our marketing</div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-image">Replace with Services image</div>
+                    <h3>Service Businesses</h3>
+                    <p>Win through authority. Thought leadership and strategic content that positions you as the expert everyone wants to hire.</p>
+                    <div class="industry-stat">Generate 25-40 qualified leads monthly from content marketing</div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-image">Replace with F&B image</div>
+                    <h3>F&B</h3>
+                    <p>Your Instagram is your menu. Food photography that makes people hungry and drives daily foot traffic to fill tables during slow periods.</p>
+                    <div class="industry-stat">Fill 5 more tables daily = AED 15,000 monthly additional revenue</div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-image">Replace with Retail image</div>
+                    <h3>Retail & Fashion</h3>
+                    <p>Sell lifestyle, not products. Lifestyle photography and brand aesthetic that stands out and increases conversions.</p>
+                    <div class="industry-stat">30-50% improvement in online conversion rates</div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-image">Replace with Medical image</div>
+                    <h3>Medical & Healthcare</h3>
+                    <p>Build trust through education. Compliant content and reputation management that positions you as the trusted expert.</p>
+                    <div class="industry-stat">40-60% of new patients from online presence</div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <div class="industry-image">Replace with diverse industries image</div>
+                    <h3>All Other Industries</h3>
+                    <p>Tech, Hospitality, Beauty, Automotive, Education, Finance, Legal, Manufacturing, Events, Tourism — we've done it all with proven results.</p>
+                    <div class="industry-stat">Custom strategies proven across 73+ diverse businesses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilot Program Section -->
+    <section class="pilot-section" id="pilot">
+        <div class="container">
+            <div class="pilot-box">
+                <div class="pilot-badge">De-Risked Pilot Program</div>
+                <h2>30-Day Lead Funnel Audit & Strategy</h2>
+                <p>Not ready for a 12-month commitment? Start with our proven 30-60 day Pilot Project. We'll audit your current marketing, identify gaps, and implement a results-focused strategy.</p>
+                
+                <div class="pilot-features">
+                    <div class="pilot-feature">
+                        <div class="pilot-check">✓</div>
+                        <div class="pilot-feature-text">Complete marketing audit</div>
+                    </div>
+                    <div class="pilot-feature">
+                        <div class="pilot-check">✓</div>
+                        <div class="pilot-feature-text">Custom strategy implementation</div>
+                    </div>
+                    <div class="pilot-feature">
+                        <div class="pilot-check">✓</div>
+                        <div class="pilot-feature-text">20% lead quality increase guarantee</div>
+                    </div>
+                    <div class="pilot-feature">
+                        <div class="pilot-check">✓</div>
+                        <div class="pilot-feature-text">Strategy fee waived if targets not met</div>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="cta-primary">Book Your Pilot Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Let's Talk</div>
+                <h2 class="section-title">Ready to Transform Your Marketing?</h2>
+                <p class="section-subtitle">
+                    Schedule a discovery call to see if we're the right fit for your business
+                </p>
+            </div>
+            
+            <a href="tel:+971527382121" class="cta-primary">Call Now: +971 52 738 2121</a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-label">Phone</div>
+                    <a href="tel:+971527382121">+971 52 738 2121</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:hello@ladybugmedia.ae">hello@ladybugmedia.ae</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ladybug Media</h3>
+                <p>Building brands that last. Delivering results that matter. Specialists in Real Estate & Service Business marketing, serving all industries across Dubai, UAE & Egypt.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#services">Photography & Video</a></li>
+                    <li><a href="#services">Social Media Management</a></li>
+                    <li><a href="#services">Paid Advertising</a></li>
+                    <li><a href="#services">Website Development</a></li>
+                    <li><a href="#services">Brand Development</a></li>
+                    <li><a href="#services">SEO & Local Marketing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Specialization</h3>
+                <ul>
+                    <li><a href="#industries">Real Estate Marketing</a></li>
+                    <li><a href="#industries">Service Business Marketing</a></li>
+                    <li><a href="#industries">F&B & Restaurants</a></li>
+                    <li><a href="#industries">Retail & Fashion</a></li>
+                    <li><a href="#industries">Medical & Healthcare</a></li>
+                    <li><a href="#pilot">30-Day Pilot Program</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:hello@ladybugmedia.ae">hello@ladybugmedia.ae</a></li>
+                    <li><a href="tel:+971527382121">+971 52 738 2121</a></li>
+                    <li style="margin-top: 15px;">Dubai, UAE</li>
+                    <li>Cairo, Egypt</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            &copy; 2025 Ladybug Media & Marketing. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+        
+        // Fade in animation on scroll
+        var fadeElements = document.querySelectorAll('.fade-in');
+        
+        var fadeInObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(function(element) {
+            fadeInObserver.observe(element);
+        });
+        
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Nav background on scroll
+        var nav = document.querySelector('nav');
+        
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.98)';
+                nav.style.boxShadow = '0 5px 30px rgba(255, 215, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
